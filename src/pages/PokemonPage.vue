@@ -1,7 +1,7 @@
 <template>
 	<main class="game">
 		<h1>Who's that pokémon?</h1>
-		<PokemonImage />
+		<PokemonImage :pokemonId="6" :showPokemon="false" />
 		<PokemonOptions />
 	</main>
 </template>
