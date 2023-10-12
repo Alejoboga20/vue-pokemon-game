@@ -11,7 +11,8 @@ import PokemonImage from '@/components/PokemonImage.vue';
 import PokemonOptions from '@/components/PokemonOptions.vue';
 
 import getPokemonOptions from '../helpers/getPokemonOptions';
-getPokemonOptions();
+
+const pokemonNames = await getPokemonOptions();
 
 export default {
 	name: 'PokemonPage',
