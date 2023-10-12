@@ -1,9 +1,9 @@
 <template>
-	<div>
+	<main class="game">
 		<h1>Who's that pokémon?</h1>
 		<PokemonImage />
 		<PokemonOptions />
-	</div>
+	</main>
 </template>
 
 <script lang="ts">
@@ -18,3 +18,10 @@ export default {
 	},
 };
 </script>
+
+<style lang="css" scoped>
+.game {
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+}
+</style>
