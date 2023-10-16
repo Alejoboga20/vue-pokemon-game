@@ -30,7 +30,9 @@ export default {
 <style lang="css" scoped>
 .pokemon-container {
 	height: 200px;
+	text-align: center;
 }
+
 img {
 	height: 200px;
 	position: absolute;
