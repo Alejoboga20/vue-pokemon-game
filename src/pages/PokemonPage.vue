@@ -39,6 +39,8 @@ export default {
 <style lang="css" scoped>
 .game {
 	font-family: 'Courier New', Courier, monospace;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 </style>

@@ -7,15 +7,23 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue';
+import type { PropType } from 'vue';
+
+interface Pokemon {
+	id: number;
+	name: string;
+}
+
+export default defineComponent({
 	name: 'PokemonOptions',
 	props: {
 		pokemons: {
-			type: Array,
+			type: Array as PropType<Pokemon[]>,
 			required: true,
 		},
 	},
-};
+});
 </script>
 
 <style lang="css" scoped>
