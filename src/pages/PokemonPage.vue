@@ -5,7 +5,7 @@
 		</div>
 		<div v-else="pokemon">
 			<h1>Who's that pokémon?</h1>
-			<PokemonImage :pokemonId="pokemon.id" :showPokemon="showPokemon" />
+			<PokemonImage :pokemon-id="pokemon.id" :show-pokemon="showPokemon" />
 			<PokemonOptions :pokemons="pokemonNamesArray" @selection="checkAnswer" />
 		</div>
 	</main>
