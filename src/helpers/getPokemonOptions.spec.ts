@@ -1,4 +1,11 @@
-import getPokemonOptions, { getPokemons, MAX_POKEMONS } from './getPokemonOptions';
+import getPokemonOptions, { getPokemons, getPokemonNames, MAX_POKEMONS } from './getPokemonOptions';
+
+const pokemonsArray = [
+	{ name: 'bulbasaur', id: 1 },
+	{ name: 'ivysaur', id: 2 },
+	{ name: 'venusaur', id: 3 },
+	{ name: 'charmander', id: 4 },
+];
 
 describe('getPokemonOptions', () => {
 	test(`should return an array of ${MAX_POKEMONS} numbers`, () => {
@@ -7,5 +14,24 @@ describe('getPokemonOptions', () => {
 		expect(pokemons.length).toBe(MAX_POKEMONS);
 		expect(pokemons[0]).toBe(1);
 		expect(pokemons[MAX_POKEMONS - 1]).toBe(MAX_POKEMONS);
+	});
+
+	test('should return four pokemon names', async () => {
+		const pokemons = await getPokemonNames([1, 2, 3, 4]);
+
+		expect(pokemons.length).toBe(4);
+		expect(pokemons).toStrictEqual(pokemonsArray);
+	});
+
+	test('should return an array of mixed pokemons', async () => {
+		const pokemons = await getPokemonOptions();
+
+		expect(pokemons.length).toBe(4);
+		expect(pokemons).toEqual([
+			{ name: expect.any(String), id: expect.any(Number) },
+			{ name: expect.any(String), id: expect.any(Number) },
+			{ name: expect.any(String), id: expect.any(Number) },
+			{ name: expect.any(String), id: expect.any(Number) },
+		]);
 	});
 });
