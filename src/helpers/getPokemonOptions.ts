@@ -1,9 +1,11 @@
 import pokeApi from '@/api/pokeApi';
 import type { PokeAPIResponse } from '@/types/PokeApiResponse';
 
-const getPokemons = () => {
+export const MAX_POKEMONS = 650;
+
+export const getPokemons = () => {
 	/* Create pokemons array with 650 slots */
-	const pokemonsArray = Array.from(Array(650));
+	const pokemonsArray = Array.from(Array(MAX_POKEMONS));
 	const arrayWithIndex = pokemonsArray.map((_, index) => index + 1);
 
 	return arrayWithIndex;
