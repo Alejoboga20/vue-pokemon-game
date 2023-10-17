@@ -7,6 +7,10 @@
 			<h1>Who's that pokémon?</h1>
 			<PokemonImage :pokemon-id="pokemon.id" :show-pokemon="showPokemon" />
 			<PokemonOptions :pokemons="pokemonNamesArray" @selection="checkAnswer" />
+			<div v-if="showAnswer" class="fade-in">
+				<h2>{{ message }}</h2>
+				<button @click="newGame">New Game</button>
+			</div>
 		</div>
 	</main>
 </template>
@@ -34,6 +38,8 @@ export default defineComponent({
 			pokemonNamesArray: [] as Pokemon[],
 			pokemon: undefined as Pokemon | undefined,
 			showPokemon: false,
+			showAnswer: false,
+			message: '',
 		};
 	},
 	methods: {
@@ -43,8 +49,22 @@ export default defineComponent({
 			const rndInt = Math.floor(Math.random() * 4);
 			this.pokemon = this.pokemonNamesArray[rndInt];
 		},
-		checkAnswer(id: number) {
+		checkAnswer(selectedId: number) {
 			this.showPokemon = true;
+			this.showAnswer = true;
+
+			if (selectedId === this.pokemon?.id) {
+				this.message = `Correct! It's ${this.pokemon.name}`;
+			} else {
+				this.message = `Wrong! It's ${this.pokemon?.name}`;
+			}
+		},
+		newGame() {
+			this.pokemon = undefined;
+			this.showPokemon = false;
+			this.showAnswer = false;
+			this.message = '';
+			this.mixPokemonArray();
 		},
 	},
 	mounted() {
