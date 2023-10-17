@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PokemonImage > should match the Snapshot 1`] = `
+"<div data-v-68dceee4=\\"\\" class=\\"pokemon-container\\"><img data-v-68dceee4=\\"\\" class=\\"hidden-pokemon\\" src=\\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg\\" alt=\\"pokemon\\">
+  <!--v-if-->
+</div>"
+`;
