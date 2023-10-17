@@ -7,6 +7,7 @@
 			<h1>Who's that pokémon?</h1>
 			<PokemonImage :pokemon-id="pokemon.id" :show-pokemon="showPokemon" />
 			<PokemonOptions :pokemons="pokemonNamesArray" @selection="checkAnswer" />
+
 			<div v-if="showAnswer" class="fade-in">
 				<h2>{{ message }}</h2>
 				<button @click="newGame">New Game</button>
@@ -79,5 +80,6 @@ export default defineComponent({
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	text-align: center;
 }
 </style>
