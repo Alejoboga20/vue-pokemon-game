@@ -6,7 +6,7 @@
 		<div v-else="pokemon">
 			<h1>Who's that pokémon?</h1>
 			<PokemonImage :pokemonId="pokemon.id" :showPokemon="showPokemon" />
-			<PokemonOptions :pokemons="pokemonNamesArray" />
+			<PokemonOptions :pokemons="pokemonNamesArray" @selection="checkAnswer" />
 		</div>
 	</main>
 </template>
@@ -42,6 +42,9 @@ export default defineComponent({
 
 			const rndInt = Math.floor(Math.random() * 4);
 			this.pokemon = this.pokemonNamesArray[rndInt];
+		},
+		checkAnswer(id: number) {
+			this.showPokemon = true;
 		},
 	},
 	mounted() {
