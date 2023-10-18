@@ -1,11 +1,5 @@
+import { pokemonsArray } from '@/mocks/pokemons.mock';
 import getPokemonOptions, { getPokemons, getPokemonNames, MAX_POKEMONS } from './getPokemonOptions';
-
-const pokemonsArray = [
-	{ name: 'bulbasaur', id: 1 },
-	{ name: 'ivysaur', id: 2 },
-	{ name: 'venusaur', id: 3 },
-	{ name: 'charmander', id: 4 },
-];
 
 describe('getPokemonOptions', () => {
 	test(`should return an array of ${MAX_POKEMONS} numbers`, () => {

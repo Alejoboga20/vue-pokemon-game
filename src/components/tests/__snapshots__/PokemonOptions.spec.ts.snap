@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PokemonOptions > should match the Snapshot 1`] = `
+"<ul data-v-39189cb9=\\"\\">
+  <li data-v-39189cb9=\\"\\">bulbasaur</li>
+  <li data-v-39189cb9=\\"\\">ivysaur</li>
+  <li data-v-39189cb9=\\"\\">venusaur</li>
+  <li data-v-39189cb9=\\"\\">charmander</li>
+</ul>"
+`;
