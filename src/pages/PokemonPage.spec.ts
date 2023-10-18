@@ -1,5 +1,7 @@
 import { vi } from 'vitest';
 import { VueWrapper, mount, shallowMount } from '@vue/test-utils';
+
+import { pokemonsArray } from '@/mocks/pokemons.mock';
 import PokemonPage from './PokemonPage.vue';
 
 describe('PokemonPage', () => {
@@ -11,6 +13,22 @@ describe('PokemonPage', () => {
 
 	afterEach(() => {
 		vi.clearAllMocks();
+	});
+
+	test('should match Snapshot after loading pokemons', () => {
+		const wrapper = mount(PokemonPage, {
+			data() {
+				return {
+					pokemonNamesArray: pokemonsArray,
+					pokemon: pokemonsArray[0],
+					showPokemon: false,
+					showAnswer: false,
+					message: '',
+				};
+			},
+		});
+
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('should call mixPokemonArray on mounted', () => {

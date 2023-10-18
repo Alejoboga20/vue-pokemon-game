@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PokemonPage > should match Snapshot after loading pokemons 1`] = `
+"<main data-v-2108564c=\\"\\" class=\\"game\\">
+  <div data-v-2108564c=\\"\\">
+    <h1 data-v-2108564c=\\"\\">Who's that pokémon?</h1>
+    <div data-v-68dceee4=\\"\\" data-v-2108564c=\\"\\" class=\\"pokemon-container\\"><img data-v-68dceee4=\\"\\" class=\\"hidden-pokemon\\" src=\\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg\\" alt=\\"pokemon\\">
+      <!--v-if-->
+    </div>
+    <ul data-v-39189cb9=\\"\\" data-v-2108564c=\\"\\">
+      <li data-v-39189cb9=\\"\\">bulbasaur</li>
+      <li data-v-39189cb9=\\"\\">ivysaur</li>
+      <li data-v-39189cb9=\\"\\">venusaur</li>
+      <li data-v-39189cb9=\\"\\">charmander</li>
+    </ul>
+    <!--v-if-->
+  </div>
+</main>"
+`;
