@@ -6,6 +6,7 @@ import PokemonPage from './PokemonPage.vue';
 
 describe('PokemonPage', () => {
 	let wrapper: VueWrapper<any>;
+	const mixPokemonArraySpy = vi.spyOn(PokemonPage.methods!, 'mixPokemonArray');
 
 	beforeEach(() => {
 		wrapper = shallowMount(PokemonPage);
@@ -32,9 +33,28 @@ describe('PokemonPage', () => {
 	});
 
 	test('should call mixPokemonArray on mounted', () => {
-		const mixPokemonArraySpy = vi.spyOn(PokemonPage.methods!, 'mixPokemonArray');
-		const wrapper = shallowMount(PokemonPage);
-
 		expect(mixPokemonArraySpy).toHaveBeenCalled();
+	});
+
+	test('should show Picture and Options components', () => {
+		const wrapper = shallowMount(PokemonPage, {
+			data() {
+				return {
+					pokemonNamesArray: pokemonsArray,
+					pokemon: pokemonsArray[0],
+					showPokemon: false,
+					showAnswer: false,
+					message: '',
+				};
+			},
+		});
+		const image = wrapper.find('pokemon-image-stub');
+		const options = wrapper.find('pokemon-options-stub');
+
+		expect(image.exists()).toBeTruthy();
+		expect(options.exists()).toBeTruthy();
+
+		expect(image.attributes('pokemonid')).toBe('1');
+		expect(options.attributes('pokemons')).toBeTruthy();
 	});
 });

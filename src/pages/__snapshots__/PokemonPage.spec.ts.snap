@@ -17,3 +17,14 @@ exports[`PokemonPage > should match Snapshot after loading pokemons 1`] = `
   </div>
 </main>"
 `;
+
+exports[`PokemonPage > should show Picture and Options components 1`] = `
+"<main data-v-2108564c=\\"\\" class=\\"game\\">
+  <div data-v-2108564c=\\"\\">
+    <h1 data-v-2108564c=\\"\\">Who's that pokémon?</h1>
+    <pokemon-image-stub data-v-2108564c=\\"\\" pokemonid=\\"1\\" showpokemon=\\"false\\"></pokemon-image-stub>
+    <pokemon-options-stub data-v-2108564c=\\"\\" pokemons=\\"[object Object],[object Object],[object Object],[object Object]\\"></pokemon-options-stub>
+    <!--v-if-->
+  </div>
+</main>"
+`;
