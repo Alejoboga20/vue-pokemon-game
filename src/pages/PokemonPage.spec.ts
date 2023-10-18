@@ -57,4 +57,23 @@ describe('PokemonPage', () => {
 		expect(image.attributes('pokemonid')).toBe('1');
 		expect(options.attributes('pokemons')).toBeTruthy();
 	});
+
+	test('should change state when checkAnswer is call', async () => {
+		const wrapper = shallowMount(PokemonPage, {
+			data() {
+				return {
+					pokemonNamesArray: pokemonsArray,
+					pokemon: pokemonsArray[0],
+					showPokemon: false,
+					showAnswer: false,
+					message: '',
+				};
+			},
+		});
+		/* Select the correct answer */
+		await wrapper.vm.checkAnswer(1);
+
+		expect(wrapper.vm.showPokemon).toBeTruthy();
+		expect(wrapper.vm.showAnswer).toBeTruthy();
+	});
 });
